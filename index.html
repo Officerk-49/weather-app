@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+         rel="stylesheet"
+      />
+      <title>weather app</title>
+   <script defer src="main.js"></script></head>
+   <body>
+      <header id="header">
+         <h1 id="page-header">Weather</h1>
+         <div id="error-noti" hidden></div>
+      </header>
+      <main>
+         <div class="control-row">
+            <form action="" id="weather-form">
+               <input type="text" id="weather-input" name="weather-input" />
+               <button type="submit" id="form-submit-btn">
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 -960 960 960"
+                     fill="currentColor"
+                  >
+                     <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109
+                  75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56
+                  56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5
+                  52.5T200-580q0 75 52.5 127.5T380-400Z"
+                     />
+                  </svg>
+               </button>
+            </form>
+            <div class="unit-control">
+               <button class="unit-btn active" id="celsius">Celsius</button>
+               <button class="unit-btn" id="fahrenheit">Fahrenheit</button>
+            </div>
+         </div>
+         <article class="weather-card">
+            <div class="card-right-side">
+               <div id="timezone"></div>
+               <div class="temp-info">
+                  <img
+                     id="weather-icon"
+                     src="#"
+                     alt=""
+                     width="180"
+                     height="180"
+                  />
+                  <div id="temp">
+                     <div class="temp-value" data-unit="c"></div>
+                     <span class="temp-unit">°C</span>
+                  </div>
+               </div>
+               <div class="location-info">
+                  <h2 class="city"></h2>
+                  <div class="weather-desc"></div>
+               </div>
+            </div>
+            <div class="weather-info-grid">
+               <div class="weather-info">
+                  <div class="info-title">Wind</div>
+                  <div id="wind-info" class="info-data"></div>
+               </div>
+               <div class="weather-info">
+                  <div class="info-title">Humidity</div>
+                  <div id="humidity-info" class="info-data"></div>
+               </div>
+               <div class="weather-info">
+                  <div class="info-title">Visibility</div>
+                  <div id="visibility-info" class="info-data"></div>
+               </div>
+               <div class="weather-info">
+                  <div class="info-title">Pressure</div>
+                  <div id="pressure-info" class="info-data"></div>
+               </div>
+            </div>
+         </article>
+      </main>
+   </body>
+</html>
