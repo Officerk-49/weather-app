@@ -1,0 +1,329 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+   --text-clr: rgba(25, 20, 20, 0.4);
+   --border: 1px solid rgba(25, 20, 20, 0.25);
+   --border-radius: 15px;
+   --smaller-text-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+html {
+   font-family:
+      'roboto', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif,
+      sans-serif;
+}
+
+body {
+   overflow-x: hidden;
+}
+
+.gradient-night {
+   background: linear-gradient(90deg, #0f0c29, #302b63);
+}
+
+.gradient-freezing {
+   background: linear-gradient(90deg, #a8d8ea, #e0f0ff);
+}
+.gradient-cold {
+   background: linear-gradient(90deg, #4a90b8, #89c4e1);
+}
+.gradient-mild {
+   background: linear-gradient(90deg, #56ab6e, #a8e6cf);
+}
+.gradient-warm {
+   background: linear-gradient(90deg, #efab55, #ffd200);
+}
+.gradient-hot {
+   background: linear-gradient(90deg, #f44336, #ff9800);
+}
+
+.gradient-storm {
+   background: linear-gradient(90deg, #1a1a2e, #4a4a8a);
+}
+.gradient-drizzle {
+   background: linear-gradient(90deg, #4a6fa5, #7a9cc7);
+}
+.gradient-rain {
+   background: linear-gradient(90deg, #162e93, #427ab5);
+}
+.gradient-snow {
+   background: linear-gradient(90deg, #c9d6df, #e2ebf0);
+}
+.gradient-fog {
+   background: linear-gradient(90deg, #bbd5da, #c5c7bc);
+}
+
+.gradient-night,
+.gradient-storm,
+.gradient-rain {
+   --text-clr: rgba(255, 255, 255, 0.6);
+   --border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+::selection {
+   background-color: #3886e5;
+}
+
+/* header */
+
+#header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 15px;
+   margin: 25px;
+}
+
+#page-header {
+   color: #fff;
+   font-size: 2.5rem;
+}
+
+#error-noti {
+   font-size: 1.1rem;
+   color: #c00707;
+   border: var(--border);
+   border-radius: var(--border-radius);
+   width: fit-content;
+   padding: 10px;
+   margin-left: 20px;
+}
+
+#error-noti::before {
+   content: 'error';
+   font-family: 'Material Symbols Outlined', sans-serif;
+   font-size: 1.1rem;
+   color: #c00707;
+   vertical-align: middle;
+   margin-right: 5px;
+}
+
+@media (max-width: 500px) {
+   #header {
+      flex-direction: column;
+      gap: 20px;
+      justify-content: start;
+   }
+}
+
+/* weather card */
+
+main {
+   margin-top: 40px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   margin: 0 10%;
+}
+
+#weather-form {
+   display: flex;
+   gap: 20px;
+   flex-wrap: wrap;
+   width: 100%;
+   max-width: 100%;
+   justify-content: start;
+}
+
+#weather-input {
+   color: #fff;
+   font-size: 1.3rem;
+   flex: 1;
+   min-width: 150px;
+   max-width: 350px;
+   padding: 10px;
+   border-radius: var(--border-radius);
+   border: var(--border);
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+}
+
+.weather-input:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.1) inset;
+   -webkit-text-fill-color: white;
+   transition: background-color 5000s ease-in-out 0s;
+}
+
+#weather-input:focus,
+#form-submit-btn:hover,
+.unit-btn:focus-visible {
+   border: var(--border);
+   box-shadow: 0 0 0 2px white;
+   outline: none;
+}
+
+#form-submit-btn {
+   background-color: inherit;
+   color: #fff;
+   font-size: 1.2rem;
+   padding: 0.2em 0.5em;
+   border-radius: var(--border-radius);
+   display: grid;
+   place-items: center;
+   border: var(--border);
+   border-radius: 50%;
+   height: 45px;
+   width: 45px;
+   border: var(--border);
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+}
+
+.control-row {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   max-width: 1000px;
+}
+
+.unit-control {
+   display: flex;
+   gap: 10px;
+   border-radius: var(--border-radius);
+   border: var(--border);
+   margin-left: 20px;
+}
+
+.unit-btn {
+   color: #fff;
+   background-color: inherit;
+   border: none;
+   font-size: var(--smaller-text-size);
+   padding: 0px 15px;
+   transition: background 0.3ms ease;
+   transition: backdrop-filter 0.3ms ease-in-out;
+   min-width: 110px;
+   text-align: center;
+}
+
+.unit-btn.active {
+   border: var(--border);
+   border-radius: var(--border-radius);
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+}
+
+@media (max-width: 640px) {
+   .control-row {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+   }
+
+   #weather-form {
+      justify-content: center;
+   }
+
+   .unit-control {
+      margin: 0;
+      min-height: 45px;
+   }
+
+   .unit-btn {
+      color: #fff;
+      background-color: inherit;
+      border: none;
+      font-size: var(--smaller-text-size);
+      padding: 0px 15px;
+      transition: background 0.3ms ease;
+      transition: backdrop-filter 0.3ms ease-in-out;
+   }
+}
+
+@media (max-width: 385px) {
+   .temp-info {
+      flex-direction: column;
+      margin-bottom: 20px;
+   }
+}
+
+.weather-card {
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   max-width: 1000px;
+   width: 100%;
+   justify-content: space-between;
+   border-radius: var(--border-radius);
+   padding: 25px;
+   border: var(--border);
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+}
+
+.card-right-side {
+   flex: 1;
+}
+
+.city {
+   font-size: clamp(2rem, 4vw, 3rem);
+   letter-spacing: 2%;
+   text-align: center;
+}
+
+#timezone {
+   font-size: var(--smaller-text-size);
+   color: var(--text-clr);
+   word-spacing: 4px;
+   text-align: center;
+}
+
+.temp-info {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+}
+
+#temp {
+   font-size: clamp(2.5rem, 4vw, 5rem);
+   font-weight: bold;
+   display: flex;
+}
+
+.location-info {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+}
+
+.weather-desc {
+   font-size: clamp(1rem, 2.5vw, 1.4rem);
+   color: var(--text-clr);
+}
+
+.weather-info-grid {
+   display: grid;
+   padding: 15px;
+   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+   gap: 10px;
+   column-gap: 20px;
+   margin: 0 10%;
+}
+
+.weather-info {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   gap: 5px;
+   padding: 10px 15px;
+   border-radius: var(--border-radius);
+   border: var(--border);
+}
+
+.info-title {
+   font-size: var(--smaller-text-size);
+   color: var(--text-clr);
+}
+
+.info-data {
+   font-size: clamp(1.4rem, 3vw, 2rem);
+}

@@ -1,0 +1,44 @@
+{
+   "name": "weather-app",
+   "version": "1.0.0",
+   "description": "A simple weather app written in JS",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "webpack",
+      "deploy": "gh-pages -d dist",
+      "lint": "eslint"
+   },
+   "homepage": "https://github.com/Officerk-49/weather-app#readme",
+   "bugs": {
+      "url": "https://github.com/Officerk-49/weather-app/issues"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Officerk-49/weather-app.git"
+   },
+   "keywords": [],
+   "license": "ISC",
+   "author": "",
+   "type": "module",
+   "devDependencies": {
+      "@eslint/css": "^1.1.0",
+      "@eslint/js": "^10.0.1",
+      "@eslint/json": "^1.2.0",
+      "css-loader": "^7.1.4",
+      "eslint": "^10.2.1",
+      "eslint-config-prettier": "^10.1.8",
+      "gh-pages": "^6.3.0",
+      "globals": "^17.5.0",
+      "html-webpack-plugin": "^5.6.6",
+      "prettier": "3.8.3",
+      "style-loader": "^4.0.0",
+      "webpack": "^5.105.4",
+      "webpack-cli": "^7.0.2",
+      "webpack-dev-server": "^5.2.3"
+   },
+   "dependencies": {
+      "date-fns": "^4.1.0",
+      "@fontsource/roboto": "^5.2.10"
+   }
+}
