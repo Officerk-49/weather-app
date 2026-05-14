@@ -6,7 +6,7 @@ import { unitBtnStyle } from './js/utils.js';
 
 function weatherInfoCall() {
    const weatherForm = document.getElementById('weather-form');
-   const searchInput = document.getElementById('#weather-input');
+   const searchInput = document.getElementById('weather-input');
    document.addEventListener('DOMContentLoaded', () => {
       fetchOnLoad();
    });
